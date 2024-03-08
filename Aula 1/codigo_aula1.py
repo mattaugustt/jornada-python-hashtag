@@ -36,6 +36,17 @@ time.sleep(3)
 #da uma pausa de 3 segundos no programa
 
 
+#os locais dos clicks a seguir podem mudar de acordo com a resolução de cada pc. 
+#rodar o seguinte código para obter a posição do mouse no pc especifico:
+'''
+import pyautogui
+import time
+
+time.sleep(5)
+print(pyautogui.position())
+'''
+#colocar o mouse na posição em menos de 5 segundos
+
 #adicionar o email e senha na pagina inicial
 #add e-mail
 pyautogui.click(x=1000, y=362)
@@ -50,18 +61,10 @@ pyautogui.click(x=973, y=522)
 dados = pd.read_csv("produtos.csv")
 print(dados)
 
-#cadastrar 1 produto
-#codigo do produto: dados['codigo']
-#marca do produto: dados['marca']
-#tipo do produto: dados['tipo']
-#categoria do produto: dados['categoria']
-#preço unitario do produto: dados['preco_unitario']
-#custo do produto: dados['custo']
-#obs: dados['obs']
-#codigo: (x=801, y=247)
 
+#codigo: (x=801, y=247)
 for linha in dados.index:
-#codigo
+    #codigo
     pyautogui.click(x=801, y=247)
     pyautogui.write(dados.loc[linha, 'codigo'])
 
@@ -97,8 +100,5 @@ for linha in dados.index:
     pyautogui.press('enter')
     pyautogui.scroll(5000)
     #pyautogui.press('pgup')
-
-
-
 
 
